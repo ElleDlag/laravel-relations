@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -26,8 +27,9 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        dd('da creare');
+    {   $categories = Category::all();
+        $tags = Tag::all();
+        return view('pages.postCreate',compact(['tags', 'categories']));
     }
 
     /**
@@ -38,7 +40,20 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd('da creare');
+        $title = $request ->input('title');
+        $author = $request ->input('author');
+        $category = $request ->input('category');
+        $tags = $request ->input('tags');
+        $data = [
+            'title' => $title,
+            'author' => $author,
+            'category_id' => $category,
+            'tags' => Tag::find($tags)
+        ];
+        
+        $post = Post::create($data);
+        $post -> tags() ->attach($data['tags']);
+        return redirect()->route('pages.raw');
     }
 
     /**

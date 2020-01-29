@@ -7,15 +7,22 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// components
+@import 'nav-buttons.scss';
+@import 'tag-group.scss';
+
 .navbar-laravel {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-
+i.fas{
+    font-size:24px;
+}
 body {
     padding: 50px 0;
 }
 
 .create {
     margin: 10px 0 30px;
+    
 }

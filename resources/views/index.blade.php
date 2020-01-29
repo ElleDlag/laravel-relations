@@ -6,9 +6,7 @@
     <div class="col-12">
         <h1>Posts</h1>
     </div>
-    <div class="col-12 text-right">
-        <a class="btn-primary btn right create" href="{{ route('posts.create') }}">Aggiungi Nuovo</a>
-    </div>
+    @include('components.nav-button')
     <div class="col-12">
         <table class="table">
             <thead>

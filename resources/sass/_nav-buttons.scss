@@ -1,0 +1,22 @@
+.nav-buttons{
+    .subnav{
+        &-span{
+            background-color: lightgray;
+            padding:0 20px;
+            &:not(:first-child){
+                margin-left:20px;
+            }
+        }
+       .btn-home{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border: none;
+        &.oto{
+            background-color: #f7d259;
+        }
+        &.mtm{
+            background-color: #820755;
+        }
+       }
+    }
+}
